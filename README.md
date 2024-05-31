@@ -7,10 +7,18 @@ A Golang gRPC User Service
 ```bash
 git clone https://github.com/nabin3/userInfo
 ```
+### Build 
+You need golang installed on your system 
+
+```bash
+cd userInfo/
+go build -C service/ -o bin/userservice
+go build -C api_server/ -o bin/API_SERVER
+```
+
 
 ### Building docker image
 ```bash
-cd userInfo/
 docker build . -t userinfoimage
 ```
 
