@@ -12,12 +12,19 @@ You need golang installed on your system
 
 ```bash
 cd userInfo/
+go mod install
 go build -C service/ -o bin/userservice
 go build -C api_server/ -o bin/API_SERVER
 ```
+### Run in localmaachine
+```bash
+./service/bin/userservice   // this command will start gRPC userservice that will listen on port :8080
 
-
+./api_server/bin/API_SERVER // this command will start API_SERVER that will connect to gRPC userservice on port :8080 and serve on port :3000, accesible from **curl**, **thunder-client** or **postman**
+```
+Following step is for running the whole thing in docker and accessing api_endpoints from localhost on port :3000 
 ### Building docker image
+You need docker on you system
 ```bash
 docker build . -t userinfoimage
 ```
